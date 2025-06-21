@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>אימון אישי איתך!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 50px 0;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    input, button {
+      padding: 12px;
+      width: 80%;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+
+    input {
+      background: #eee;
+    }
+
+    button {
+      background: #00c6ff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0072ff;
+      color: white;
+    }
+
+    #msg {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>רוצה להיכנס לכושר?</h1>
+    <p>הצטרף עכשיו לאימונים אישיים עם מאמן מוסמך 💪</p>
+    <img src="https://images.unsplash.com/photo-1599058918140-0d3e63ed2e1a" alt="מאמן כושר">
+
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" id="name" placeholder="הכנס שם מלא" required><br>
+      <input type="email" id="email" placeholder="הכנס כתובת מייל" required><br>
+      <button type="submit">אני רוצה להתחיל</button>
+    </form>
+
+    <p id="msg"></p>
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      document.getElementById('msg').innerText = `תודה ${name}! נחזור אליך בהקדם 😉`;
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+    }
+  </script>
+</body>
+</html>
